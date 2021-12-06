@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+    crossorigin="anonymous">
+    <title>Challenges</title>
+</head>
+<body>
+
+    
+
+        <!---Navigation Bar-->
+  <nav class="navbar navbar-dark bg-primary">
+    <a style="margin-left:2%" class="navbar-brand" href="#">Challenges APP</a>
+  </nav>
+
+        
+
+  <div style="margin:2%" >
+
+   <div id="challengeList">
+
+   
+    <div id="1" class="card">
+      <div class="card-body">
+        <i id="1" style="float: right; font-size:40px " class="fas fa-trash-alt deleteBtn"></i>
+        <h2>Challenge 1</h2>
+        <h3>10 Points</h3>
+        <h4>course: Web II</h4>
+        <i id="1" style="float: right; font-size:40px " class="fas fa-pencil-alt editBtn"></i>
+        <h4>session 8</h4>
+      </div>
+    </div>
+
+    <div id="2" class="card">
+      <div class="card-body">
+        <i id="2" style="float: right; font-size:40px " class="fas fa-trash-alt deleteBtn"></i>
+        <h2>Challenge 2</h2>
+        <h3>10 Points</h3>
+        <h4>course: Web II</h4>
+        <i id="2" style="float: right; font-size:40px " class="fas fa-pencil-alt editBtn"></i>
+        <h4>session 8</h4>
+      </div>
+    </div>
+  </div>
+
+    <div  id="addChallenge" style="cursor: pointer;" class="card">
+      <div style="display: inline-block" class="card-body">
+        <h2>Add Challenge</h2>
+        <i style="float: right; font-size:80px "  class="fas fa-plus-square"></i>
+      </div>
+    </div>
+    
+
+    <br/>
+         <!---Forms-->
+
+    <div id="addChallengeFormDiv" >
+         <form id="addChallengeForm">  
+            <div class="form-group">
+              <label >name</label>
+              <input type="text" class="form-control" id="challengeNameInput" aria-describedby="emailHelp" placeholder="Enter challenge name">
+            </div>
+            <br/>
+            <div class="form-group">
+              <label >Points</label>
+              <input type="number" class="form-control" id="challengePointsInput" placeholder="Enter challenge points">
+            </div>
+            <br />
+            <div class="form-group">
+                <label >Course</label>
+                <input type="text" class="form-control" id="challengeCoursInput" placeholder="Enter course name">
+            </div>
+            <br/>
+            <div class="form-group">
+                <label >Session</label>
+                <input type="text" class="form-control" id="challengeSessionInput" placeholder="Enter session">
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Add challenge</button>
+         </form>
+    </div>
+
+    <div id="editChallengeFormDiv" >
+      <form id="addChallengeForm">  
+         <div class="form-group">
+           <label >Edit name</label>
+           <input type="text" class="form-control" id="challengeNameInputEdit" aria-describedby="emailHelp" placeholder="Enter challenge name">
+         </div>
+         <br/>
+         <div class="form-group">
+           <label >Edit Points</label>
+           <input type="number" class="form-control" id="challengePointsInputEdit" placeholder="Enter challenge points">
+         </div>
+         <br />
+         <div class="form-group">
+             <label >Edit Course</label>
+             <input type="text" class="form-control" id="challengeCoursInputEdit" placeholder="Enter course name">
+         </div>
+         <br/>
+         <div class="form-group">
+             <label >Edit Session</label>
+             <input type="text" class="form-control" id="challengeSessionInputEdit" placeholder="Enter session">
+         </div>
+         <br/>
+         <button type="submit" class="btn btn-primary">Edit challenge</button>
+      </form>
+   </div>
+  </div>
+    
+</body>
+</html>
