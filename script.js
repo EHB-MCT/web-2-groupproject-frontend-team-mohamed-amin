@@ -3,6 +3,41 @@ window.onload = () =>{
     document.getElementById("addChallengeFormDiv").style.display = "none";
     document.getElementById("editChallengeFormDiv").style.display = "none";
 
+
+    
+
+    fetch("https://groep-web2-backend.herokuapp.com/challenges")
+   .then(response => response.json())
+   .then(data => printChallengesHtml(data))
+
+  
+    
+    
+
+
+   function printChallengesHtml(challenges) 
+   {
+    document.getElementById("challengeList").innerHTML ="";
+       challenges.forEach(challenge =>{
+           console.log(challenge)
+
+           document.getElementById("challengeList").innerHTML +=`
+           <div id="${challenge._id}" class="card">
+            <div class="card-body">
+             <i id=${challenge._id}" style="float: right; font-size:40px " class="fas fa-trash-alt deleteBtn"></i>
+             <h2>${challenge.name}</h2>
+             <h3>${challenge.points}</h3>
+             <h4>${challenge.course}</h4>
+             <i id="${challenge._id}" style="float: right; font-size:40px " class="fas fa-pencil-alt editBtn"></i>
+             <h4>${challenge.session}</h4>
+            </div>
+           </div>
+           
+           `;
+       })
+
+   }
+
     let addFormBool = true;
 
     document.getElementById("addChallenge").addEventListener("click", function(){
@@ -57,26 +92,22 @@ window.onload = () =>{
        
         let name = document.getElementById("challengeNameInput").value;
         let points = document.getElementById("challengePointsInput").value;
-        let cours = document.getElementById("challengeCoursInput").value;
+        let course = document.getElementById("challengeCoursInput").value;
         let session = document.getElementById("challengeSessionInput").value;
-        let id =  2;
-        id++;
+    
 
-        document.getElementById("challengeList").innerHTML += `
-
-        <div id="${id}" class="card">
-        <div class="card-body">
-          <i id="${id}" style="float: right; font-size:40px " class="fas fa-trash-alt deleteBtn"></i>
-          <h2>${name}</h2>
-          <h3>${points}</h3>
-          <h4>course: ${cours}</h4>
-          <i id="${id}" style="float: right; font-size:40px " class="fas fa-pencil-alt editBtn"></i>
-          <h4>${session}</h4>
-        </div>
-      </div>
+        fetch('https://groep-web2-backend.herokuapp.com/challenges', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name, points, course, session
+            })
+        }).then(data => {
+            return data.json()
+        })
         
-        `;
-
         edditBtn();
         deleteBtn();
 
